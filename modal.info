@@ -1,0 +1,3 @@
+core = "7.x"
+description = "Submit email to user"
+name = "Modal form"
