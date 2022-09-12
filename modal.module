@@ -14,9 +14,6 @@ function modal_menu() {
       'page arguments' => array('modal_form'), //put the name of the form here
       'access callback' => TRUE
     );
-    $users = entity_load('user');
-
-    dump($users);
     return $items;
   }
 
@@ -24,7 +21,6 @@ function modal_menu() {
 
 function modal_form($form, &$formstate){
 
-    // $config = $this->getConfiguration();
 
     $form['subject'] = array(
         '#type' => 'textfield',
@@ -68,8 +64,6 @@ function modal_mail ($key, &$message, $params) {
 
 function modal_form_submit($form, &$form_state) {
 
-    // drupal_set_message($form_state['values']['subject']);    
-    
     $subject = $form_state['values']['subject'];
     $email_body = $form_state['values']['email_body'];
     drupal_set_message($subject);    
