@@ -12,7 +12,8 @@ function modal_menu() {
       'description' => 'A form to mess around with.',
       'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
       'page arguments' => array('modal_form'), //put the name of the form here
-      'access callback' => TRUE
+      'access arguments' => array('administer users'),
+
     );
     return $items;
   }
