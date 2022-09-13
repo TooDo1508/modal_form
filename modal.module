@@ -3,6 +3,14 @@
 // go the config SMTP -> turn on full 
 // SMTP sever : smtp.gmail.com; SMTP port: 465
 // SMTP authentication user: "admin@example" pass "123abc"
+function modal_permission() {
+    return array(
+        'admin access modal form' =>  array(
+            'title' => t('Admin access Modal Form'),
+            'restrict access' => TRUE,
+          ),      
+    );
+}
 
 function modal_menu() {
     $items = array();
@@ -12,7 +20,7 @@ function modal_menu() {
       'description' => 'A form to mess around with.',
       'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
       'page arguments' => array('modal_form'), //put the name of the form here
-      'access arguments' => array('administer users'),
+      'access arguments' => array('admin access modal form'),
 
     );
     return $items;
